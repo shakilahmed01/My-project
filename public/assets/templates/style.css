@@ -1,0 +1,28 @@
+html {
+        scroll-behavior: smooth;
+}
+.container{ 
+        padding-left: 0;
+        padding-right: 0;
+}
+.grad{
+        background-color: #0c094c;
+        background-image: linear-gradient(#0c094c, #090909);
+}
+.underline:hover{
+        text-decoration: underline;
+        transform: scale(1.1);
+}
+.my_style{
+        box-shadow: 2px 6px 5px black;
+        transform: scale(0.9);
+}
+.contact_form:hover{
+        box-shadow: 2px 6px 5px black;
+        transform: scale(1.1);        
+}
+
+.form-control{
+        box-shadow: none !important;
+        transform: scale(0.8);
+}

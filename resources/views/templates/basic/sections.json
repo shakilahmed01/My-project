@@ -1,0 +1,247 @@
+{
+    "banner": {
+        "builder": true,
+        "no_selection":true,
+        "name": "Banner Section",
+        "content": {
+            "images":{
+                "background_image1":{
+                    "size":"1903x635"
+                },
+                "background_image2":{
+                    "size":"1903x635"
+                },
+                "background_image3":{
+                    "size":"1903x635"
+                }
+            },
+            "heading": "text",
+            "subheading": "text"
+        }
+    },
+    "account": {
+        "builder": true,
+        "name": "Open account Section",
+        "content": {
+            "images":{
+                "image1":{
+                    "size":"608x261"
+                },
+                "image2":{
+                    "size":"608x447"
+                }
+            },
+            "heading": "text",
+            "subheading": "text",
+            "register_link": "text"
+        }
+    },
+
+    "offer": {
+        "builder": true,
+        "name": "Offer Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text",
+            "all_offer_link": "text"
+        },
+        "element": {
+            "select":{
+                "name":"offer_type",
+                "options":{
+                    "refferral":"Refferral",
+                    "sendmoney":"Sendmoney",
+                    "cashout":"Cashout",
+                    "cashin":"Cashin"
+                }
+            },
+            "images":{
+                "image":{
+                    "size":"608x261"
+                }
+            },
+            "offer_link": "text",
+            "description": "textarea",
+            "modal": true
+        }
+        
+    },
+
+    "feature": {
+        "builder": true,
+        "name": "Feature Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "title": "text",
+            "description": "textarea",
+            "feature_icon": "icon",
+            "modal": true
+        }
+    },
+    "about": {
+        "builder": true,
+        "name": "About Us",
+        "content": {
+            "images":{
+                "background_image":{
+                    "size":"500x500"
+                },
+                "about_image":{
+                    "size":"518x345"
+                }
+            },
+            "heading": "text",
+            "description": "textarea",
+            "about_icon": "icon"
+        },
+        "element": {
+            "name":"Person Name",   
+            "images":{
+                "image":{
+                    "size":"186x120"
+                }
+            },
+            "designation": "text",
+            "modal": true
+        }
+    },
+    "about_dark": {
+        "builder": false,
+        "name": "About Us Dark",
+        "content": {
+
+        }
+    },
+    "service": {
+        "builder": true,
+        "name": "Service Section",
+        "content": {
+            "select":{
+                "name":"trx_type",
+                "options":{
+                  "cashin":"Cashin",
+                  "sendmoney":"Sendmoney",
+                  "cashout":"Cashout"
+                }
+            },
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "select":{
+                "name":"trx_type",
+                "options":{
+                    "cashin":"Cashin",
+                    "sendmoney":"Sendmoney",
+                    "cashout":"Cashout"
+                }
+            },
+            "service_icon": "icon",
+            "bg_color": "color",
+            "title": "text",
+            "description": "textarea",
+            "modal": true
+        }
+    },
+    "counter": {
+        "builder": true,
+        "name": "Counter Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "title": "text",
+            "counter_digit": "text",
+            "sub_title": "text",
+            "counter_icon": "icon",
+            "counter_icon_2": "icon",
+            "modal": true
+        }
+    },
+    "policy_pages": {
+        "builder": true,
+        "no_selection":true,
+        "name": "Policy Pages",
+        "element": {
+            "title": "text",
+            "details": "textarea-nic",
+            "modal": false
+        }
+    },
+    "faq": {
+        "builder": true,
+        "name": "FAQ Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "question": "text",
+            "answer": "textarea-nic",
+            "modal": false
+        }
+    },
+    "blog": {
+        "builder": true,
+        "name": "Blog Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        },
+        "element": {
+            "images":{
+                "blog_image_1":{
+                    "size":"728x465",
+                    "thumb":"120x80"
+                },
+                "blog_image_2":{
+                    "size":"728x465",
+                    "thumb":"120x80"
+                }
+            },
+            "title": "text",
+            "description": "textarea",
+            "description_nic": "textarea-nic",
+            "blog_icon": "icon",
+            "modal": false
+        }
+    },
+    "subscribe": {
+        "builder": true,
+        "name": "Subscribe Section",
+        "content": {
+            "heading": "text",
+            "subheading": "text"
+        }
+    },
+    "social_icon": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Social Icons",
+        "element": {
+            "title": "text",
+            "social_icon": "icon",
+            "url": "text",
+            "modal": false
+        }
+    },
+    "contact_us": {
+        "builder": true,
+        "no_selection": true,
+        "name": "Contact Us",
+        "content": {
+            "title": "text",
+            "short_details": "text",
+            "email_address": "text",
+            "contact_details": "text",
+            "contact_number": "text",
+            "latitude": "text",
+            "longitude": "text",
+            "website_footer": "textarea-nic"
+        }
+    }
+}
