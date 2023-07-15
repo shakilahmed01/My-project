@@ -231,7 +231,6 @@
     },
     "contact_us": {
         "builder": true,
-        "no_selection": true,
         "name": "Contact Us",
         "content": {
             "title": "text",

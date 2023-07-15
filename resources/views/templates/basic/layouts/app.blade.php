@@ -7,11 +7,11 @@
 </head>
 <body>
 @include('partials.notify')
-@include('templates.basic.include.header')
     <div class="container-fluid grad text-center">
+    @include('templates.basic.include.header')
           @yield('content')
+    @include('templates.basic.include.footer')
     </div>
-@include('templates.basic.include.footer')
 @include('templates.basic.include.js')
 @stack('script')
 

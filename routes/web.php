@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/clear', function(){
     \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+    echo "<h1>Cache Cleared!! </h1>";
 });
 
 // User Support Ticket

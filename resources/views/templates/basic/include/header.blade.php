@@ -12,6 +12,12 @@
                 <li class="nav-item"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="#">Offer</a></li>
                 <li class="nav-item"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="#">About</a></li>
                 <li class="nav-item"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="#">Log In</a></li>
+                @php
+                $pages = App\Models\Page::where('tempname','templates.basic.')->where('is_default',Status::NO)->get();
+                @endphp
+                    @foreach($pages as $k => $data)
+                        <li class="nav-item active"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="{{route('pages',[$data->slug])}}"  class="nav-link">{{__($data->name)}}</a></li>
+                    @endforeach
             </ul>
         </div>
     </div>

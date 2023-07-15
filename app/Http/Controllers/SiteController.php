@@ -11,6 +11,7 @@ use App\Models\SupportMessage;
 use App\Models\SupportTicket;
 use App\Models\User;
 use App\Models\Subscriber;
+use App\Traits\SupportTicketManager;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Cookie;
 
 class SiteController extends Controller
 {
+    use SupportTicketManager;
+    
     public function index(){
         $reference = @$_GET['reference'];
         if ($reference) {
@@ -26,7 +29,6 @@ class SiteController extends Controller
 
         $pageTitle = 'Home';
         $sections = Page::where('tempname','templates.basic.')->where('slug','/')->first();
-        //dd($sections);
         return view('templates.basic.home', compact('pageTitle','sections'));
     }
 
@@ -79,7 +81,7 @@ class SiteController extends Controller
         $ticket->user_id = auth()->id() ?? 0;
         $ticket->name = $request->name;
         $ticket->email = $request->email;
-        $ticket->priority = Status::PRIORITY_MEDIUM;
+        $ticket->priority = $request->priority ?? Status::PRIORITY_MEDIUM;
 
 
         $ticket->ticket = $random;
@@ -95,9 +97,26 @@ class SiteController extends Controller
         $adminNotification->save();
 
         $message = new SupportMessage();
+
+        $request->merge(['ticket_reply' => 1]);
+
+        $this->validation($request);
+
+        $ticket->status = $this->userType != 'admin' ? Status::TICKET_REPLY : Status::TICKET_ANSWER;
+        $ticket->last_reply = Carbon::now();
+        $ticket->save();
         $message->support_ticket_id = $ticket->id;
+        if ($this->userType == 'admin') {
+            $message->admin_id = $user->id;
+        }
+
         $message->message = $request->message;
         $message->save();
+
+        if ($request->hasFile('attachments')) {
+            $uploadAttachments = $this->storeSupportAttachments($message->id);
+            if ($uploadAttachments != 200) return back()->withNotify($uploadAttachments);;
+        }
 
         $notify[] = ['success', 'Ticket created successfully!'];
 

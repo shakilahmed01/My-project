@@ -7,7 +7,7 @@
                     <a href="{{route('ticket.index') }}" class="btn btn-sm btn-base mb-2">@lang('My Support Ticket')</a>
                 </div>
                 <div class="card grad p-3 m-3">
-                    <div class="card-header badge bg-dark text-wrap p-2 m-2 ">
+                    <div class="card-header badge bg-dark text-wrap grad p-2 m-2 ">
                         <h1 class="text fw-bolder text-white">{{ __($pageTitle) }}</h1>
                     </div>
 
