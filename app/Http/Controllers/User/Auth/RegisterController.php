@@ -225,7 +225,7 @@ class RegisterController extends Controller
 
     public function registered()
     {
-        return to_route('user.home');
+        return to_route('home');
     }
 
 }

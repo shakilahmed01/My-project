@@ -14,7 +14,36 @@
                     @foreach($pages as $k => $data)
                         <li class="nav-item"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="{{route('pages',[$data->slug])}}"  class="nav-link">{{__($data->name)}}</a></li>
                     @endforeach
-                <li class="nav-item active"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="{{route('signup')}}">Sign Up</a></li>
+                @if(auth()->user())
+                <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->fullname }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('user.change.password') }}">
+                                        @lang('Change Password')
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('user.profile.setting') }}">
+                                        @lang('Profile Setting')
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('user.twofactor') }}">
+                                        @lang('2FA Security')
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('user.logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('user.logout') }}" method="get" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                </li>
+                @else
+                <li class="nav-item active"><a class="btn btn-outline-info fw-bolder text-white nav-link underline" href="{{route('signup')}}">Sign In</a></li>
+                @endif
 
             </ul>
         </div>

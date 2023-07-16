@@ -14,7 +14,7 @@ class UserController extends Controller
     //
     public function home(){
         $pageTitle = "User Home";
-        return view('user.dashboard',compact('pageTitle'));
+        return view('templates.basic.home',compact('pageTitle'));
     }
 
     public function depositHistory(Request $request)

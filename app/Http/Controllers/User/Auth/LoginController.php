@@ -111,7 +111,7 @@ class LoginController extends Controller
 
         request()->session()->invalidate();
 
-        return to_route('user.login')->with('success', 'You have been logged out.');
+        return to_route('home')->with('success', 'You have been logged out.');
     }
 
 

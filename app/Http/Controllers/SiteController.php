@@ -31,9 +31,15 @@ class SiteController extends Controller
         $sections = Page::where('tempname','templates.basic.')->where('slug','/')->first();
         return view('templates.basic.home', compact('pageTitle','sections'));
     }
-    public function signup(){
+    public function signup($reference = null){
         $pageTitle = 'Sign Up';
-        return view('templates.basic.sections.signup', compact('pageTitle'));
+        if($reference){
+            session()->put('reference', $reference);
+        }
+        $info = json_decode(json_encode(getIpInfo()), true);
+        $mobileCode = @implode(',', $info['code']);
+        $countries = json_decode(file_get_contents(resource_path('views/partials/country.json')));
+        return view('templates.basic.sections.signup', compact('pageTitle','mobileCode','countries'));
     }
 
 
