@@ -229,9 +229,23 @@
             "modal": false
         }
     },
-    "contact_us": {
+    "contact": {
         "builder": true,
         "name": "Contact Us",
+        "content": {
+            "title": "text",
+            "short_details": "text",
+            "email_address": "text",
+            "contact_details": "text",
+            "contact_number": "text",
+            "latitude": "text",
+            "longitude": "text",
+            "website_footer": "textarea-nic"
+        }
+    },
+    "signup": {
+        "builder": true,
+        "name": "Sign Up",
         "content": {
             "title": "text",
             "short_details": "text",

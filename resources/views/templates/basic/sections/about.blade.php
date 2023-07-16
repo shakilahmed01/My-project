@@ -2,7 +2,7 @@
   $aboutContent= getContent('about.content', true);
   $aboutElements= getContent('about.element', false);
 @endphp
-<div class="about">
+<div class="about py-5 m-5">
     <div class="text badge bg-dark text-wrap py-3 my-3">
         <i class="fa fa-folder-open fa-5x text-success"></i>
         <h1 class="text fw-bolder text-white">About Us</h1>

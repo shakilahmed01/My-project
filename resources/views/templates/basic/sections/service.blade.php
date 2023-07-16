@@ -2,7 +2,7 @@
   $serviceContent= getContent('service.content', true);
   $serviceElements= getContent('service.element', false);
 @endphp
-<div class="service">
+<div class="service py-5 m-5">
     <div class="text fs-5 badge bg-dark text-wrap py-3 my-3">
         <i class="fa-brands fa-servicestack fa-5x text-info"></i>
         <h1 class="text fw-bolder text-white">Service</h1>

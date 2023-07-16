@@ -31,6 +31,11 @@ class SiteController extends Controller
         $sections = Page::where('tempname','templates.basic.')->where('slug','/')->first();
         return view('templates.basic.home', compact('pageTitle','sections'));
     }
+    public function signup(){
+        $pageTitle = 'Sign Up';
+        return view('templates.basic.sections.signup', compact('pageTitle'));
+    }
+
 
     public function pages($slug)
     {

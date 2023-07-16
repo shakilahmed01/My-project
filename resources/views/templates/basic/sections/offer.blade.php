@@ -2,7 +2,8 @@
   $offerContent= getContent('offer.content', true);
   $offerElements= getContent('offer.element', false);
 @endphp
-    <div class="text fs-5 badge bg-dark text-wrap p-3 m-3">
+<div class="offer py-5 m-5">
+<div class="text fs-5 badge bg-dark text-wrap">
             <i class="fa fa-gift fa-5x text-danger" aria-hidden="true"></i>
             <h1 class="text fw-bolder text-white">Current Offers</h1>
     </div>
@@ -43,5 +44,6 @@
                 <a href="{{__(@$offerContent->data_values->all_offer_link)}}" class="btn btn-outline-info btn-lg rounded-circle">All Offers</a>
         </div>
     </div>
+</div>
 
                       

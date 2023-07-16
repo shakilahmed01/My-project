@@ -49,6 +49,7 @@ Route::controller('SiteController')->group(function () {
     Route::get('placeholder-image/{size}', 'placeholderImage')->name('placeholder.image');
 
     Route::get('frontend/{slug}', 'pages')->name('pages');
+    Route::get('/signup', 'signup')->name('signup');
     Route::get('/', 'index')->name('home');
 });
 
