@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('templates.basic.layouts.app')
 @section('content')
-<div class="container">
+<div class="container py-5 m-5">
     <div class="d-flex justify-content-center">
         <div class="verification-code-wrapper">
             <div class="verification-area">
@@ -10,8 +10,8 @@
 
                     @include('partials.verification_code')
 
-                    <div class="form--group">
-                        <button type="submit" class="btn btn--base w-100">@lang('Submit')</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-outline-info w-100">@lang('Submit')</button>
                     </div>
                 </form>
             </div>

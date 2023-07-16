@@ -35,7 +35,7 @@ trait SupportTicketManager
 
         if (!$user) {
             $pageTitle = "Open Ticket";
-            return view('templates.basic.support', compact('pageTitle'));
+            return view($this->userType . '.support.create', compact('pageTitle'));
         }
         $pageTitle = "Open Ticket";
         return view($this->userType . '.support.create', compact('pageTitle', 'user'));

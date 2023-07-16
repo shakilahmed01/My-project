@@ -69,6 +69,9 @@
         <div class="text text-center mb-0 py-2">
             <p class="fw-light">All Rights Reserved @E-Money 2023</p>
         </div>
+        <div class="grad text text-center mb-0 py-2">
+            <p class="fw-light p-1 m-1">Beta Version @E-Money 2023</p>
+        </div>
     </div>
 
 </footer>

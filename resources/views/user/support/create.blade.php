@@ -1,35 +1,35 @@
-@extends('layouts.app')
+@extends('templates.basic.layouts.app')
 @section('content')
-    <div class="container">
+    <div class="container p-1">
         <div class="row justify-content-center mt-4">
             <div class="col-md-12">
                 <div class="text-end">
                     <a href="{{route('ticket.index') }}" class="btn btn-sm btn-base mb-2">@lang('My Support Ticket')</a>
                 </div>
-                <div class="card bg-light">
-                    <div class="card-header bg-primary">
-                        <h5 class="text-white">{{ __($pageTitle) }}</h5>
+                <div class="card grad p-3 m-3">
+                    <div class="card-header badge bg-dark text-wrap grad p-2 m-2 ">
+                        <h1 class="text fw-bolder text-white">{{ __($pageTitle) }}</h1>
                     </div>
 
                     <div class="card-body">
-                        <form  action="{{route('ticket.store')}}"  method="post" enctype="multipart/form-data">
+                        <form  action="{{route('contact.submit')}}"  method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">@lang('Name')</label>
-                                    <input type="text" name="name" value="{{@$user->firstname . ' '.@$user->lastname}}" class="form-control" required readonly>
+                                    <label class="form-label text-white">@lang('Name')</label>
+                                    <input type="text" name="name" value="{{@$user->firstname . ' '.@$user->lastname}}" class="form-control" required >
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">@lang('Email Address')</label>
-                                    <input type="email"  name="email" value="{{@$user->email}}" class="form-control " required readonly>
+                                    <label class="form-label text-white">@lang('Email Address')</label>
+                                    <input type="email"  name="email" value="{{@$user->email}}" class="form-control " required >
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">@lang('Subject')</label>
+                                    <label class="form-label text-white">@lang('Subject')</label>
                                     <input type="text" name="subject" value="{{old('subject')}}" class="form-control" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label class="form-label">@lang('Priority')</label>
+                                    <label class="form-label text-white">@lang('Priority')</label>
                                     <select name="priority" class="form-control " required>
                                         <option value="3">@lang('High')</option>
                                         <option value="2">@lang('Medium')</option>
@@ -37,7 +37,7 @@
                                     </select>
                                 </div>
                                 <div class="col-12 form-group">
-                                    <label class="form-label">@lang('Message')</label>
+                                    <label class="form-label text-white">@lang('Message')</label>
                                     <textarea name="message" id="inputMessage" rows="6" class="form-control " required>{{old('message')}}</textarea>
                                 </div>
                             </div>
@@ -49,10 +49,10 @@
                                     </button>
                                 </div>
                                 <div class="file-upload">
-                                    <label class="form-label">@lang('Attachments')</label> <small class="text-danger">@lang('Max 5 files can be uploaded'). @lang('Maximum upload size is') {{ ini_get('upload_max_filesize') }}</small>
+                                    <label class="form-label text-white">@lang('Attachments')</label> <small class="text-danger">@lang('Max 5 files can be uploaded'). @lang('Maximum upload size is') {{ ini_get('upload_max_filesize') }}</small>
                                     <input type="file" name="attachments[]" id="inputAttachments" class="form-control form--control mb-2"/>
                                     <div id="fileUploadsContainer"></div>
-                                    <p class="ticket-attachments-message text-muted">
+                                    <p class="ticket-attachments-message text-white">
                                         @lang('Allowed File Extensions'): .@lang('jpg'), .@lang('jpeg'), .@lang('png'), .@lang('pdf'), .@lang('doc'), .@lang('docx')
                                     </p>
                                 </div>

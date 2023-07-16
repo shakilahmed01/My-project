@@ -64,7 +64,7 @@
                                         </select>
                                         <label for="mobile" class="form-label text-white">Mobile</label>
                                         <div class="form-group">
-                                                <span class="form-group text-white  mobile-code badge bg-dark text-wrap">
+                                                <span class="form-group text-dark mobile-code badge bg-white text-wrap">
                                                 </span>
                                                 <input type="hidden" name="mobile_code">
                                                 <input type="hidden" name="country_code">

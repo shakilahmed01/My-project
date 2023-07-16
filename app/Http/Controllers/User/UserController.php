@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Lib\GoogleAuthenticator;
 use App\Lib\FormProcessor;
 use App\Models\Form;
+use App\Models\Page;
 use App\Models\Transaction;
 
 class UserController extends Controller
@@ -14,7 +15,8 @@ class UserController extends Controller
     //
     public function home(){
         $pageTitle = "User Home";
-        return view('templates.basic.home',compact('pageTitle'));
+        $sections = Page::where('tempname','templates.basic.')->where('slug','/')->first();
+        return view('templates.basic.home',compact('pageTitle','sections'));
     }
 
     public function depositHistory(Request $request)

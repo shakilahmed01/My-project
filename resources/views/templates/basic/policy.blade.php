@@ -8,7 +8,7 @@
                     <div class="card-header grad">
                         <h5 class="card-title text-white">{{ __($pageTitle) }}</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body bg-light">
                         @php
                             echo $policy->data_values->details
                         @endphp
