@@ -33,6 +33,7 @@ class GeneralSettingController extends Controller
 
         $general = gs();
         $general->site_name = $request->site_name;
+        $general->charge = $request->charge;
         $general->cur_text = $request->cur_text;
         $general->cur_sym = $request->cur_sym;
         $general->base_color = $request->base_color;

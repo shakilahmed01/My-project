@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="card ">
-                    <div class="card-header bg-primary">
+                    <div class="card-header grad">
                         <h5 class="card-title text-white">@lang('Withdraw')</h5>
                     </div>
                     <div class="card-body">
@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label class="form-label">@lang('Amount')</label>
                                 <div class="input-group">
-                                    <input type="number" step="any" name="amount" value="{{ old('amount') }}" class="form-control form--control" required>
+                                    <input type="number" step="any" name="amount" value="{{ old('amount') }}" class="form-control m-2" required>
                                     <span class="input-group-text">{{ $general->cur_text }}</span>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <button type="submit" class="btn btn-primary w-100 mt-3">@lang('Submit')</button>
+                            <button type="submit" class="btn grad w-100 mt-3">@lang('Submit')</button>
                         </form>
                     </div>
                 </div>

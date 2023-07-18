@@ -33,7 +33,7 @@ Route::namespace('User')->name('user.')->group(function () {
 
     Route::controller('SendmoneyController')->group(function(){
         Route::get('/send/money', 'sendMoneyForm')->name('sendmoney');
-        Route::post('/login', 'login');
+        Route::post('/store/sendmoney','sendMoneyStore')->name('store.sendmoney');
     });
 });
 

@@ -28,7 +28,7 @@
                                         <label for="password" class="form-label text-white">Password</label>
                                         <input type="password" class="form-control" name="password" placeholder="Enter your Password">
                                 
-                                        <button type="submit" class="btn btn-outline-info w-100 text-white p-2 my-4">Log In</button>
+                                        <button type="submit" class="btn grad w-100 text-white p-2 my-4">Log In</button>
                                         
                                     </div>
                                 </form>
@@ -91,9 +91,7 @@
                                             
                                         </div>
                                         @endif
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-outline-info w-100 text-white p-2 m-2">Register</button>
-                                        </div>   
+                                        <button type="submit" class="btn btn-outline-info w-100 text-white p-2 my-4">Register</button>   
                                     </div>
                                 </form>
                             </div>

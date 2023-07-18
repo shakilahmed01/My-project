@@ -16,6 +16,12 @@
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <div class="form-group ">
+                                    <label> @lang('Charge')</label>
+                                    <input class="form-control" type="text" name="charge" required value="{{$general->charge}}">
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="form-group ">
                                     <label>@lang('Currency')</label>
                                     <input class="form-control" type="text" name="cur_text" required value="{{$general->cur_text}}">
                                 </div>

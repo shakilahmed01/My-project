@@ -21,7 +21,7 @@
        @endif
 
       <div class="card">
-        <div class="card-header bg-primary">
+        <div class="card-header grad">
           <h1 class="text-white">Dashboard</h1>
         </div>
          <img class="card-img" src="{{asset('assets/images/logoIcon/logo.png')}}" alt="Card image">

@@ -8,7 +8,8 @@
                     <h1 class="text-white">Send Money</h1>
                 </div>
                 <div class="card-body">
-                    <form action="">
+                    <form action="{{route('user.store.sendmoney')}}" method="post">
+                        @csrf
                         <div class="row justify-content-center text-center">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -37,8 +38,11 @@
                                     </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="amount" class="form-label">Amount</label>
-                                        <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter Amount">
+                                    <label class="form-label">@lang('Amount')</label>
+                                    <div class="input-group">
+                                        <input type="number" step="any" name="amount" value="{{ old('amount') }}" class="form-control m-2" required>
+                                        <span class="input-group-text">{{ $general->cur_text }}</span>
+                                    </div>
                                     </div>
                                 </div>
                         </div>
