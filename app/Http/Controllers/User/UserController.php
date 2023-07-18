@@ -18,6 +18,10 @@ class UserController extends Controller
         $sections = Page::where('tempname','templates.basic.')->where('slug','/')->first();
         return view('templates.basic.home',compact('pageTitle','sections'));
     }
+    public function userDashboard(){
+        $pageTitle = "User Dashboard";
+        return view('user.dashboard',compact('pageTitle'));
+    }
 
     public function depositHistory(Request $request)
     {

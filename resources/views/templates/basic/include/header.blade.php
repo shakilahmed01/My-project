@@ -21,17 +21,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{route('user.dashboard')}}">
                                         @lang('User Dashboard')
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('user.change.password') }}">
-                                        @lang('Change Password')
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('user.profile.setting') }}">
-                                        @lang('Profile Setting')
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('user.twofactor') }}">
-                                        @lang('2FA Security')
                                     </a>
                                     <a class="dropdown-item" href="{{ route('user.logout') }}"
                                        onclick="event.preventDefault();

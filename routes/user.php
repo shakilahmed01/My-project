@@ -29,6 +29,14 @@ Route::namespace('User\Auth')->name('user.')->group(function () {
     });
 });
 
+Route::namespace('User')->name('user.')->group(function () {
+
+    Route::controller('SendmoneyController')->group(function(){
+        Route::get('/send/money', 'sendMoneyForm')->name('sendmoney');
+        Route::post('/login', 'login');
+    });
+});
+
 Route::middleware('auth')->name('user.')->group(function(){
     //authorization
     Route::namespace('User')->controller('AuthorizationController')->group(function(){
@@ -45,6 +53,7 @@ Route::middleware('auth')->name('user.')->group(function(){
       Route::middleware('registration.complete')->namespace('User')->group(function(){
          Route::controller('UserController')->group(function(){
             Route::get('dashboard', 'home')->name('home');
+            Route::get('/', 'userDashboard')->name('dashboard');
             //2FA
             Route::get('twofactor', 'show2faForm')->name('twofactor');
             Route::post('twofactor/enable', 'create2fa')->name('twofactor.enable');
@@ -90,4 +99,5 @@ Route::middleware('auth')->name('user.')->group(function(){
         Route::post('manual', 'manualDepositUpdate')->name('manual.update');
     });
   });
+
 });

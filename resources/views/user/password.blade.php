@@ -1,11 +1,11 @@
-@extends('templates.basic.layouts.app')
+@extends('layouts.app')
 
 @section('content')
-    <div class="password grad py-5 m-5">
+    <div class="container">
         <div class="row justify-content-center mt-4">
             <div class="col-md-8">
 
-                <div class="card grad">
+                <div class="card">
                     <div class="card-header grad">
                         <h5 class="card-title text-white">@lang('Change Password')</h5>
                     </div>
@@ -14,11 +14,11 @@
                         <form action="" method="post">
                             @csrf
                             <div class="form-group">
-                                <label class="form-label text-white">@lang('Current Password')</label>
+                                <label class="form-label">@lang('Current Password')</label>
                                 <input type="password" class="form-control" name="current_password" required autocomplete="current-password">
                             </div>
                             <div class="form-group">
-                                <label class="form-label text-white">@lang('Password')</label>
+                                <label class="form-label">@lang('Password')</label>
                                 <input type="password" class="form-control" name="password" required autocomplete="current-password">
                                 @if($general->secure_password)
                                     <div class="input-popup">
@@ -31,11 +31,11 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label class="form-label text-white">@lang('Confirm Password')</label>
+                                <label class="form-label">@lang('Confirm Password')</label>
                                 <input type="password" class="form-control" name="password_confirmation" required autocomplete="current-password">
                             </div>
-                            <div class="form-group p-2">
-                                <button type="submit" class="btn btn-outline-info text-white w-100">@lang('Submit')</button>
+                            <div class="form-group">
+                                <button type="submit" class="btn grad text-white w-100">@lang('Submit')</button>
                             </div>
                         </form>
                     </div>

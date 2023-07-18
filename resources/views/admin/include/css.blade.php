@@ -9,6 +9,8 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{asset('assets/templates/style.css')}}">
 
 
 <style>

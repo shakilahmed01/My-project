@@ -4,7 +4,7 @@
         <div class="row justify-content-center mt-4">
             <div class="col-md-12">
                 <div class="text-end">
-                    <a href="{{route('ticket.open') }}" class="btn btn-sm btn-primary mb-2"> <i class="fa fa-plus"></i> @lang('New Ticket')</a>
+                    <a href="{{route('ticket.open') }}" class="btn btn-sm grad text-white mb-2"> <i class="fa fa-plus"></i> @lang('New Ticket')</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table bg-light">

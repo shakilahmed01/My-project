@@ -3,7 +3,7 @@
 <style>
    
 </style>
-<div class="container">
+<div class="container text-center">
   <div class="row justify-content-center p-3 p-md-5 m-2 m-lg-5">
     <div class="col-md-8">
        @if(auth()->user()->kv == 0)
@@ -20,13 +20,11 @@
                   </div>
        @endif
 
-      <div class="card bg-dark text-dark">
+      <div class="card">
+        <div class="card-header bg-primary">
+          <h1 class="text-white">Dashboard</h1>
+        </div>
          <img class="card-img" src="{{asset('assets/images/logoIcon/logo.png')}}" alt="Card image">
-           <div class="card-img-overlay">
-               <h5 class="card-title text-center">Dashboard</h5>
-               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-               <p class="card-text">Last updated 3 mins ago</p>
-           </div>
     </div>
   </div>
 </div>

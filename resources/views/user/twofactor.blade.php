@@ -1,17 +1,17 @@
-@extends('templates.basic.layouts.app')
+@extends('layouts.app')
 @section('content')
-    <div class="two_factor grad py-5 m-5">
+    <div class="container">
         <div class="row justify-content-center gy-4">
 
             @if(!auth()->user()->ts)
             <div class="col-md-6">
-                <div class="card grad">
+                <div class="card ">
                     <div class="card-header grad">
                         <h5 class="card-title text-white">@lang('Add Your Account')</h5>
                     </div>
 
                     <div class="card-body">
-                        <h6 class="mb-3 text-white">
+                        <h6 class="mb-3">
                             @lang('Use the QR code or setup key on your Google Authenticator app to add your account. ')
                         </h6>
 
@@ -20,15 +20,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label text-white">@lang('Setup Key')</label>
+                            <label class="form-label">@lang('Setup Key')</label>
                             <div class="input-group">
-                                <input type="text" name="key" value="{{$secret}}" class="form-control referralURL" readonly>
+                                <input type="text" name="key" value="{{$secret}}" class="form-control form--control referralURL" readonly>
                                 <button type="button" class="input-group-text copytext" id="copyBoard"> <i class="fa fa-copy"></i> </button>
                             </div>
                         </div>
 
                         <label><i class="fa fa-info-circle"></i> @lang('Help')</label>
-                        <p class="text-white">@lang('Google Authenticator is a multifactor app for mobile devices. It generates timed codes used during the 2-step verification process. To use Google Authenticator, install the Google Authenticator application on your mobile device.') <a class="text--base" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en" target="_blank">@lang('Download')</a></p>
+                        <p>@lang('Google Authenticator is a multifactor app for mobile devices. It generates timed codes used during the 2-step verification process. To use Google Authenticator, install the Google Authenticator application on your mobile device.') <a class="text--base" href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en" target="_blank">@lang('Download')</a></p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
             <div class="col-md-6">
 
                 @if(auth()->user()->ts)
-                    <div class="card grad">
+                    <div class="card ">
                         <div class="card-header grad">
                             <h5 class="card-title text-white">@lang('Disable 2FA Security')</h5>
                         </div>
@@ -47,15 +47,15 @@
                                 @csrf
                                 <input type="hidden" name="key" value="{{$secret}}">
                                 <div class="form-group">
-                                    <label class="form-label text-white">@lang('Google Authenticatior OTP')</label>
+                                    <label class="form-label">@lang('Google Authenticatior OTP')</label>
                                     <input type="text" class="form-control" name="code" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100">@lang('Submit')</button>
+                                <button type="submit" class="btn grad w-100">@lang('Submit')</button>
                             </div>
                         </form>
                     </div>
                 @else
-                    <div class="card grad">
+                    <div class="card">
                         <div class="card-header grad">
                             <h5 class="card-title text-white">@lang('Enable 2FA Security')</h5>
                         </div>
@@ -64,12 +64,10 @@
                                 @csrf
                                 <input type="hidden" name="key" value="{{$secret}}">
                                 <div class="form-group">
-                                    <label class="form-label text-white">@lang('Google Authenticatior OTP')</label>
+                                    <label class="form-label">@lang('Google Authenticatior OTP')</label>
                                     <input type="text" class="form-control" name="code" required>
                                 </div>
-                                <div class="form-group">
-                                <button type="submit" class="btn btn-outline-info text-white p-2 m-2 w-100">@lang('Submit')</button>
-                                </div>
+                                <button type="submit" class="btn grad text-white w-100">@lang('Submit')</button>
                             </div>
                         </form>
                     </div>

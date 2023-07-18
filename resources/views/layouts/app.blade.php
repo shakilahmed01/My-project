@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-primary shadow-sm ">
+        <nav class="navbar navbar-expand-md navbar-light grad shadow-sm ">
             <div class="container">
 
                 <a class="navbar-brand" href="{{route('user.home')}}">
