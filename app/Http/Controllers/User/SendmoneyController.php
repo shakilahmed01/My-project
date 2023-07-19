@@ -36,8 +36,15 @@ class SendmoneyController extends Controller
         //percent
         $charge = ($amount*$general->charge)/100;
 
+        $fromUser->balance -= $amount;
+        $fromUser->balance -= $charge;
+        $fromUser->save();
+
+        $toUser->balance += $amount;
+        $toUser->save();
+
         //balance check
-        if($amount < $fromUser->amount){
+        if($amount > $fromUser->balance){
             $notify[] = ['error', ' doesn\'t have Sufficent balance.'];
             return back()->withNotify($notify);
         }
@@ -51,12 +58,6 @@ class SendmoneyController extends Controller
             $notify[] = ['error', 'Send Money Error this input mobile number is yours!'];
             return back()->withNotify($notify);
         }
-
-        $toUser->balance += $amount;
-        $toUser->save();
-        $fromUser->balance -= $amount;
-        $fromUser->balance -= $charge;
-        $fromUser->save();
 
         $sendMoney = new SendMoney();
 

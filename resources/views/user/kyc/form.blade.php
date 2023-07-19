@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-8 ">
                 <div class="card bg-light">
-                    <div class="card-header bg-primary">
+                    <div class="card-header grad">
                         <h5 class="card-title text-white">@lang('KYC Form')</h5>
                     </div>
                     <div class="card-body">
@@ -14,7 +14,7 @@
                             <x-viser-form identifier="act" identifierValue="kyc" />
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success w-100">@lang('Submit')</button>
+                                <button type="submit" class="btn grad text-white w-100">@lang('Submit')</button>
                             </div>
                         </form>
                     </div>

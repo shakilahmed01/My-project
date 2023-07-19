@@ -33,5 +33,6 @@ class Status{
     const KYC_UNVERIFIED = 0;
     const KYC_PENDING = 2;
     const KYC_VERIFIED = 1;
+    const AGENT = 1;
 
 }

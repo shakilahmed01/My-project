@@ -11,7 +11,7 @@
                     
                     </div>
                 </div>
-                <div class="sidebar-brand-text mx-3"> Laradex <sup><i class="fas fa-laugh-wink"></i></sup></div>
+                <div class="sidebar-brand-text mx-3"> {{$general->site_name}} <sup><i class="fas fa-laugh-wink"></i></sup></div>
             </a>
 
             <!-- Divider -->

@@ -29,11 +29,22 @@ Route::namespace('User\Auth')->name('user.')->group(function () {
     });
 });
 
+
+// Send money
 Route::namespace('User')->name('user.')->group(function () {
 
     Route::controller('SendmoneyController')->group(function(){
         Route::get('/send/money', 'sendMoneyForm')->name('sendmoney');
         Route::post('/store/sendmoney','sendMoneyStore')->name('store.sendmoney');
+    });
+});
+
+// Cash Out
+Route::namespace('User')->name('user.')->group(function () {
+
+    Route::controller('CashoutController')->group(function(){
+        Route::get('/cashout', 'cashOutForm')->name('cashout');
+        Route::post('/store/cashout','cashOutStore')->name('store.cashout');
     });
 });
 

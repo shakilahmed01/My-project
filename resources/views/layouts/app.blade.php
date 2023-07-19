@@ -1,3 +1,6 @@
+@php
+use App\Constants\Status;
+@endphp
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -71,10 +74,15 @@
                                     Service
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if(auth()->user()->user_role == Status::AGENT)
+                                    <a class="dropdown-item" href="#">
+                                        {{ __('Cash In') }}
+                                    </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('user.sendmoney') }}">
                                         {{ __('Send Money') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('user.deposit.history') }}" >
+                                    <a class="dropdown-item" href="{{ route('user.cashout') }}" >
                                         {{ __('Cash Out') }}
                                     </a>
 
@@ -130,9 +138,7 @@
                                     <a class="dropdown-item" href="{{ route('user.twofactor') }}">
                                         @lang('2FA Security')
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('user.logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal" href="{{ route('user.logout') }}">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -147,7 +153,25 @@
                 </div>
             </div>
         </nav>
-
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                        <a class="btn btn-primary" href="{{ route('user.logout') }}">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
         <main class="py-4 ">
             @include('partials.notify')
             @yield('content')

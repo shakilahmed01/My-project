@@ -8,6 +8,7 @@ use App\Lib\GoogleAuthenticator;
 use App\Lib\FormProcessor;
 use App\Models\Form;
 use App\Models\Page;
+use App\Constants\Status;
 use App\Models\Transaction;
 
 class UserController extends Controller
@@ -19,7 +20,11 @@ class UserController extends Controller
         return view('templates.basic.home',compact('pageTitle','sections'));
     }
     public function userDashboard(){
-        $pageTitle = "User Dashboard";
+        if(auth()->user()->user_role == Status::AGENT){
+            $pageTitle = "Agent Dashboard";
+        }else{
+            $pageTitle = "User Dashboard";
+        }
         return view('user.dashboard',compact('pageTitle'));
     }
 
