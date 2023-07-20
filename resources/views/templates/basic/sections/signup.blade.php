@@ -29,6 +29,9 @@
                                         <input type="password" class="form-control" name="password" placeholder="Enter your Password">
                                 
                                         <button type="submit" class="btn grad w-100 text-white p-2 my-4">Log In</button>
+                                        <div class="text-white">
+                                            <a href="{{ route('user.password.request') }}">Forgot Password??</a>
+                                        </div>
                                         
                                     </div>
                                 </form>

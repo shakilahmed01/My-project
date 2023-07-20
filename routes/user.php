@@ -48,6 +48,15 @@ Route::namespace('User')->name('user.')->group(function () {
     });
 });
 
+// Cash In
+Route::namespace('User')->name('user.')->group(function () {
+
+    Route::controller('CashinController')->group(function(){
+        Route::get('/cashin', 'cashInForm')->name('cashin');
+        Route::post('/store/cashin','cashInStore')->name('store.cashin');
+    });
+});
+
 Route::middleware('auth')->name('user.')->group(function(){
     //authorization
     Route::namespace('User')->controller('AuthorizationController')->group(function(){

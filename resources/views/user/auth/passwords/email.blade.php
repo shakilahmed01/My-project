@@ -1,10 +1,10 @@
 @extends('templates.basic.layouts.app')
 @section('content')
-<div class="container">
+<div class="container py-5 my-5">
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-7 col-xl-5">
             <div class="card ">
-                <div class="card-header bg-primary">
+                <div class="card-header grad">
                     <h5 class="card-title text-white">{{ __($pageTitle) }}</h5>
                 </div>
                 <div class="card-body">
@@ -21,7 +21,7 @@
                         <x-captcha />
                         <br>
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary w-100">@lang('Submit')</button>
+                            <button type="submit" class="btn grad text-white w-100">@lang('Submit')</button>
                         </div>
                     </form>
                 </div>

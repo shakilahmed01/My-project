@@ -75,7 +75,7 @@ use App\Constants\Status;
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @if(auth()->user()->user_role == Status::AGENT)
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{route('user.cashin')}}">
                                         {{ __('Cash In') }}
                                     </a>
                                     @endif
