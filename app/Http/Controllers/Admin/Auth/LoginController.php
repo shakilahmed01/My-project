@@ -75,6 +75,10 @@ class LoginController extends Controller
             'username' => 'required',
             'password' => 'required',
          ]);
+         if(!verifyCaptcha()){
+            $notify[] = ['error','Invalid captcha provided'];
+            return back()->withNotify($notify);
+        }
          $credential = $request-> only('username', 'password');
          if($this->guard('admin')->attempt($credential)){
             return to_route('admin.dashboard')->with('message','Welcome to Dashboard');

@@ -43,6 +43,8 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
                             <div class="col-lg-6">
+                                @include('partials.notify')
+
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Admin</h1>
