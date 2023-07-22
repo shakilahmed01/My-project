@@ -30,7 +30,7 @@
                     @csrf
                     <div class="form-group m-2">
                         <input type="email" class="form-control" name="email" placeholder="Enter your email address">
-                        <button type="submit" class="btn btn-outline-info text-white m-1">Subscribe</button>
+                        <button type="submit" class="btn btn-outline-info text-white m-2">Subscribe</button>
                     </div>
                 </form>
             </div>
@@ -67,10 +67,10 @@
             </div>
         </div>
         <div class="text text-center mb-0 py-2">
-            <p class="fw-light">All Rights Reserved @E-Money 2023</p>
+            <p class="fw-light">All Rights Reserved @ {{$general->site_name}} 2023</p>
         </div>
         <div class="grad text text-center mb-0 py-2">
-            <p class="fw-light p-1 m-1">Beta Version @E-Money 2023</p>
+            <p class="fw-light p-1 m-1">Beta Version @ {{$general->site_name}} 2023</p>
         </div>
     </div>
 

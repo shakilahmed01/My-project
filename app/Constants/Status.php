@@ -36,5 +36,6 @@ class Status{
     
     //user type user:0 | agent:1
     const AGENT = 1;
+    const USER = 0;
 
 }

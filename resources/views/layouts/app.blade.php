@@ -88,7 +88,7 @@ use App\Constants\Status;
 
                                 </div>
                             </li>
-                            @if(auth()->user()->use_role == Status::AGENT)
+                            @if(auth()->user()->user_role == Status::AGENT)
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown"  class="nav-link dropdown-toggle text-white" href="#" role="button"data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Deposit
@@ -117,7 +117,7 @@ use App\Constants\Status;
                                     </a>
 
                                 </div>
-                            </li>
+                            </li> 
                             @endif
 
                             <li class="nav-item dropdown">

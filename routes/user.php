@@ -53,6 +53,7 @@ Route::namespace('User')->name('user.')->group(function () {
 
     Route::controller('CashinController')->group(function(){
         Route::get('/cashin', 'cashInForm')->name('cashin');
+        Route::get('/cashin/details', 'cashInDetails')->name('cashin.details');
         Route::post('/store/cashin','cashInStore')->name('store.cashin');
     });
 });

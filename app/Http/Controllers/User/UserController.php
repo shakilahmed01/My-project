@@ -10,7 +10,9 @@ use App\Models\Form;
 use App\Models\Page;
 use App\Constants\Status;
 use App\Models\Transaction;
-
+use App\Models\CashIn;
+use App\Models\SendMoney;
+use App\Models\CashOut;
 class UserController extends Controller
 {
     //
@@ -121,11 +123,33 @@ class UserController extends Controller
     public function transactions()
     {
         $pageTitle = 'Transactions';
+        
         $remarks = Transaction::distinct('remark')->orderBy('remark')->get('remark');
 
         $transactions = Transaction::where('user_id',auth()->id())->searchable(['trx'])->filter(['trx_type','remark'])->orderBy('id','desc')->paginate(getPaginate());
 
-        return view('user.transactions', compact('pageTitle','transactions','remarks'));
+        $user = auth()->user();
+        if($user->user_role == Status::AGENT){
+            $cashIns = CashIn::where('agent_user', $user->id)->get();
+        }elseif($user->user_role == Status::USER){
+            $cashIns = CashIn::where('to_user', $user->id)->get();
+        }
+
+        $user = auth()->user();
+        if($user->user_role == Status::AGENT){
+            $sendMoneys = SendMoney::where('from_user', $user->id)->get();
+        }elseif($user->user_role == Status::USER){
+            $sendMoneys = SendMoney::where('from_user', $user->id)->get();
+        }
+
+        $user = auth()->user();
+        if($user->user_role == Status::AGENT){
+            $cashOuts = CashOut::where('agent_user', $user->id)->get();
+        }elseif($user->user_role == Status::USER){
+            $cashOuts = CashOut::where('from_user', $user->id)->get();
+        }
+
+        return view('user.transactions', compact('pageTitle','transactions','remarks','cashIns','sendMoneys','cashOuts'));
     }
 
 
